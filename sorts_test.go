@@ -113,9 +113,12 @@ func testFunction(f func(Interface), t *testing.T) {
 
 func benchmarkFunction(f func(Interface), b *testing.B) {
     var a intList
-    a = intList(make([]int, 50000))
-    a.fillRandom(1000)
+    a = intList(make([]int, 20000))
+    b.ResetTimer()
     for i := 0; i < b.N; i++ {
+        b.StopTimer()
+        a.fillRandom(1000)
+        b.StartTimer()
         f(a)
     }
 }
