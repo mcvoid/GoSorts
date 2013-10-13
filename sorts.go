@@ -130,8 +130,8 @@ func ParallelQuicksort(a Interface)  {
         if p < r {
             wg.Add(2)
             q := partition(p, r)
-            qsort(p, q - 1)
-            qsort(q + 1, r)
+            go qsort(p, q - 1)
+            go qsort(q + 1, r)
         }
     }
     wg.Add(1)
