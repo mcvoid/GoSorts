@@ -151,6 +151,10 @@ func TestParallelQuicksort(t *testing.T) {
     testFunction(ParallelQuicksort, t)
 }
 
+func TestRandomizedQuicksort(t *testing.T) {
+    testFunction(RandomizedQuicksort, t)
+}
+
 func BenchmarkBubble(b *testing.B) {
     benchmarkFunction(Bubble, b)
 }
@@ -177,4 +181,8 @@ func BenchmarkQuicksort(b *testing.B) {
 
 func BenchmarkParallelQuicksort(b *testing.B) {
     benchmarkFunction(ParallelQuicksort, b)
+}
+
+func BenchmarkRandomizedQuicksort(b *testing.B) {
+    benchmarkFunction(RandomizedQuicksort, b)
 }
